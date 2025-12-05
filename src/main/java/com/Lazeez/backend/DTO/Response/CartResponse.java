@@ -1,5 +1,7 @@
 package com.Lazeez.backend.DTO.Response;
 
+import com.Lazeez.backend.Model.Customer;
+import com.Lazeez.backend.Model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

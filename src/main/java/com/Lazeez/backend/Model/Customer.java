@@ -1,6 +1,7 @@
 package com.Lazeez.backend.Model;
 
 import com.Lazeez.backend.Enum.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -40,6 +41,7 @@ public class Customer {
     private Date createdAt;
 
     @OneToOne(mappedBy = "customer" , cascade = CascadeType.ALL)
+
     private Cart cart;
 
 }

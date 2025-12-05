@@ -1,5 +1,6 @@
 package com.Lazeez.backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,9 +23,10 @@ public class Cart {
 
     @OneToOne
     @JoinColumn(name = "customer_id")
+    @JsonIgnore
     private  Customer customer;
 
-    @OneToMany
+    @ManyToMany
     @JsonIgnore
     List<Product> products=new ArrayList<>();
 }

@@ -1,6 +1,7 @@
 package com.Lazeez.backend.Model;
 
 import com.Lazeez.backend.Enum.Category;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,9 +39,8 @@ public class Product {
 
 
     @ManyToMany(mappedBy = "products")
-    List<OrderEntity> orders = new ArrayList<>();
+    private List<OrderEntity> orders = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_id")
-    Cart cart;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Cart> cart;
 }
